@@ -1,6 +1,6 @@
 # keras_tf_exploration
  
-#Goal:  Fun and play.
+# Goal:  Fun and play.
 ### Different ways to build Keras models.
 ### How do custom activation layers work?
 
