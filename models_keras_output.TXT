@@ -1,0 +1,103 @@
+....   /models_keras.py
+python version:  3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)]
+numpy version 1.26.4
+pandas verson:  2.2.2
+<class 'str'> D:\dev_test\keras_tf_exploration
+
+ ========== Sequential_Model ==========
+2024-05-29 09:32:10.733220: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'cudnn64_8.dll'; dlerror: cudnn64_8.dll not found
+2024-05-29 09:32:10.733505: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1934] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ layer1 (Dense)              (1, 3)                    12        
+                                                                 
+ layer2 (Dense)              (1, 3)                    12        
+                                                                 
+ layer3 (Dense)              (1, 3)                    12        
+                                                                 
+=================================================================
+Total params: 36
+Trainable params: 36
+Non-trainable params: 0
+_________________________________________________________________
+None
+x [[1. 1. 1.]]
+y  [[0.12323289 0.10852206 0.489721  ]]
+1/1 [==============================] - 1s 630ms/step - loss: 0.6131 - accuracy: 1.0000
+
+ ========== Model_Model ==========
+Model: "model__model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ layer1 (Dense)              multiple                  12        
+                                                                 
+ layer2 (Dense)              multiple                  12        
+                                                                 
+ layer3 (Dense)              multiple                  12        
+                                                                 
+=================================================================
+Total params: 36
+Trainable params: 36
+Non-trainable params: 0
+_________________________________________________________________
+None
+x [[1. 1. 1.]]
+y  [[0. 0. 0.]]
+1/1 [==============================] - 1s 608ms/step - loss: nan - accuracy: 1.0000
+
+ ========== Functional API ==========
+Model: "model"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_1 (InputLayer)        [(None, 3)]               0         
+                                                                 
+ dense (Dense)               (None, 3)                 12        
+                                                                 
+ dense_1 (Dense)             (None, 3)                 12        
+                                                                 
+ model__model (Model_Model)  (None, 3)                 36        
+                                                                 
+ dense_2 (Dense)             (None, 3)                 12        
+                                                                 
+=================================================================
+Total params: 72
+Trainable params: 72
+Non-trainable params: 0
+_________________________________________________________________
+None
+x [[1. 1. 1.]]
+y  [[nan nan nan]]
+1/1 [==============================] - 1s 725ms/step - loss: nan - accuracy: 1.0000
+
+ ========== model_model_stack ==========
+===== custom activation =====
+Model: "model_1"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ input_2 (InputLayer)        [(None, 3)]               0         
+                                                                 
+ dense_5 (Dense)             (None, 3)                 12        
+                                                                 
+ dense_6 (Dense)             (None, 3)                 12        
+                                                                 
+ model__model (Model_Model)  (None, 3)                 36        
+                                                                 
+ dense_7 (Dense)             (None, 3)                 12        
+                                                                 
+=================================================================
+Total params: 72
+Trainable params: 72
+Non-trainable params: 0
+_________________________________________________________________
+None
+x [[1. 1. 1.]]
+y  [[nan nan nan]]
+1/1 [==============================] - 1s 793ms/step - loss: nan - accuracy: 1.0000
+
+Process finished with exit code 0
